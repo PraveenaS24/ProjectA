@@ -1,10 +1,11 @@
-package com.chainsys.ProjectA.appconfig;
+package com.chainsys.springproject.appconfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
-import com.chainsys.ProjectA.beans.Employee;
-import com.chainsys.ProjectA.beans.Customer;
+
+import com.chainsys.springproject.beans.Customer;
+import com.chainsys.springproject.beans.Employee;
 
 @Configuration
 public class AppConfig {

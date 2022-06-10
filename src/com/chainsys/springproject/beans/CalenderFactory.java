@@ -1,4 +1,4 @@
-package com.chainsys.ProjectA.beans;
+package com.chainsys.springproject.beans;
 // multiple factory methods in one class 
 // Calender factory is also called as initiating bean because methods in this bean instantiates objects for other beans
 public class CalenderFactory {

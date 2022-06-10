@@ -1,13 +1,14 @@
-package com.chainsys.ProjectA.test;
+package com.chainsys.springproject.test;
 
 import org.springframework.context.ApplicationContext;//parent
 import org.springframework.context.support.ClassPathXmlApplicationContext;//child
-import com.chainsys.ProjectA.beans.Scoreboard;
-import com.chainsys.ProjectA.beans.Actor;
-import com.chainsys.ProjectA.beans.Customer;
-import com.chainsys.ProjectA.beans.Employee;
-import com.chainsys.ProjectA.beans.Lunch;
-import com.chainsys.ProjectA.beans.Calender;
+
+import com.chainsys.springproject.beans.Actor;
+import com.chainsys.springproject.beans.Calender;
+import com.chainsys.springproject.beans.Customer;
+import com.chainsys.springproject.beans.Employee;
+import com.chainsys.springproject.beans.Lunch;
+import com.chainsys.springproject.beans.Scoreboard;
 
 public class TestClasspathXml {
 	public static void testA() {

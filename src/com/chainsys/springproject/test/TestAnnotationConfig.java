@@ -1,10 +1,10 @@
-package com.chainsys.ProjectA.test;
+package com.chainsys.springproject.test;
 
-import com.chainsys.ProjectA.appconfig.AppConfig;
 import org.springframework.context.ApplicationContext; //parent
 import org.springframework.context.annotation.AnnotationConfigApplicationContext; //child
-import com.chainsys.ProjectA.beans.Employee;
-import com.chainsys.ProjectA.beans.Customer;
+import com.chainsys.springproject.beans.Employee;
+import com.chainsys.springproject.appconfig.AppConfig;
+import com.chainsys.springproject.beans.Customer;
 public class TestAnnotationConfig {
 	public static void testA() {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

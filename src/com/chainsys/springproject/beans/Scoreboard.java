@@ -1,4 +1,4 @@
-package com.chainsys.ProjectA.beans;
+package com.chainsys.springproject.beans;
 
 public class Scoreboard {
 	public int targetScore;

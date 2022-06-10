@@ -3,24 +3,24 @@
   http://www.springframework.org/schema/beans/spring-beans.xsd 
   http://www.springframework.org/schema/context/ 
   http://www.springframework.org/schema/context/spring-context.xsd">
-	<bean id="emp2" class="com.chainsys.ProjectA.beans.Employee" />
-	<bean id="emp1" class="com.chainsys.ProjectA.beans.Employee">
+	<bean id="emp2" class="com.chainsys.springproject.beans.Employee" />
+	<bean id="emp1" class="com.chainsys.springproject.beans.Employee">
 	   <property name="id" value="2"></property>
 	   <property name="name" value="kohli"></property>
 	</bean>
-	<bean id="emp" class="com.chainsys.ProjectA.beans.Customer" lazy-init="true" />
-	<bean id="act" class="com.chainsys.ProjectA.beans.Actor" scope="prototype" /> 
-	<bean id="film" class="com.chainsys.ProjectA.beans.Movie"> 
+	<bean id="emp" class="com.chainsys.springproject.beans.Customer" lazy-init="true" />
+	<bean id="act" class="com.chainsys.springproject.beans.Actor" scope="prototype" /> 
+	<bean id="film" class="com.chainsys.springproject.beans.Movie"> 
 		<constructor-arg type="java.lang.String" value="Arundhadhi" />
 		<constructor-arg type="java.lang.String" value="Praveena" />
 	</bean>
-	<bean id="sb1" class="com.chainsys.ProjectA.beans.Scoreboard" factory-method="createObject" scope="prototype"/>
-	<bean id="sb2" class="com.chainsys.ProjectA.beans.Scoreboard" factory-method="createObject" scope="prototype">
+	<bean id="sb1" class="com.chainsys.springproject.beans.Scoreboard" factory-method="createObject" scope="prototype"/>
+	<bean id="sb2" class="com.chainsys.springproject.beans.Scoreboard" factory-method="createObject" scope="prototype">
 	<constructor-arg type="int" value="366" />
 	</bean>
-	<bean id="calender" class="com.chainsys.ProjectA.beans.Calender" factory-method="createCalender"
+	<bean id="calender" class="com.chainsys.springproject.beans.Calender" factory-method="createCalender"
 	  factory-bean="cfactory" />
-	<bean id="cfactory" class="com.chainsys.ProjectA.beans.CalenderFactory" />
-	<bean id="appointments" class="com.chainsys.ProjectA.beans.Appointments" factory-method="createAppointment"
+	<bean id="cfactory" class="com.chainsys.springproject.beans.CalenderFactory" />
+	<bean id="appointments" class="com.chainsys.springproject.beans.Appointments" factory-method="createAppointment"
 	factory-bean="cfactory"/>
 </beans>

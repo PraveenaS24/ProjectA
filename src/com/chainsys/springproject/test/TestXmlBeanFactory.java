@@ -1,11 +1,12 @@
-package com.chainsys.ProjectA.test;
+package com.chainsys.springproject.test;
 
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
-import com.chainsys.ProjectA.beans.Employee;
-import com.chainsys.ProjectA.beans.Customer;;
+
+import com.chainsys.springproject.beans.Customer;
+import com.chainsys.springproject.beans.Employee;;
 public class TestXmlBeanFactory {
 	public static void testA() {
 //	ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");

@@ -1,4 +1,4 @@
-package com.chainsys.ProjectA.beans;
+package com.chainsys.springproject.beans;
 
 public abstract class Desert {
 	public String name;
