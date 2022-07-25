@@ -5,10 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.chainsys.springproject.beans.Car;
 
 public class TestCar {
-	public static void firstTest() {
-		ApplicationContext ac = new ClassPathXmlApplicationContext("Car.xml");
-		Car c = ac.getBean(Car.class);
-		c.start();
-		c.rotate();
+		public static void firsttest() {
+			ApplicationContext apcontext=new ClassPathXmlApplicationContext("Car2.xml");
+			Car car=apcontext.getBean("jaguvar",Car.class);
+			car.start();
+			car.move();
+		}
 	}
-}

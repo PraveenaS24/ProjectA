@@ -1,4 +1,4 @@
-package com.chainsys.springproject.beans;
+package com.chainsys.springproject.autowire;
 
 public class Wheel {
 	public void rotate() {

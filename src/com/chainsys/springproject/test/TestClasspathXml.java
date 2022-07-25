@@ -1,14 +1,20 @@
 package com.chainsys.springproject.test;
 
 import org.springframework.context.ApplicationContext;//parent
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;//child
 
+import com.chainsys.springproject.autowire.Car;
+import com.chainsys.springproject.autowire.CarServices;
 import com.chainsys.springproject.beans.Actor;
 import com.chainsys.springproject.beans.Calender;
 import com.chainsys.springproject.beans.Customer;
 import com.chainsys.springproject.beans.Employee;
 import com.chainsys.springproject.beans.Lunch;
 import com.chainsys.springproject.beans.Scoreboard;
+import com.chainsys.springproject.lifecycle.AnnotationLc;
+import com.chainsys.springproject.lifecycle.InitDisposeBean;
+import com.chainsys.springproject.lifecycle.LifeCycleBean;
 
 public class TestClasspathXml {
 	public static void testA() {
@@ -81,12 +87,13 @@ public class TestClasspathXml {
 		System.out.println(today.year);
 
 	}
+
 	public static void testLunchFactory() {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("Lunch.xml");
-		Lunch nvsilunch=ac.getBean("nvsilunch",Lunch.class);
-		Lunch vsilunch=ac.getBean("vsilunch",Lunch.class);
-		Lunch nilunch=ac.getBean("nilunch",Lunch.class);
-		Lunch chlunch=ac.getBean("chlunch",Lunch.class);
+		Lunch nvsilunch = ac.getBean("nvsilunch", Lunch.class);
+		Lunch vsilunch = ac.getBean("vsilunch", Lunch.class);
+		Lunch nilunch = ac.getBean("nilunch", Lunch.class);
+		Lunch chlunch = ac.getBean("chlunch", Lunch.class);
 		System.out.println("-----");
 		nvsilunch.serve();
 		System.out.println("-----");
@@ -96,9 +103,49 @@ public class TestClasspathXml {
 		System.out.println("-----");
 		chlunch.serve();
 	}
+
 	public static void testSetterDi() {
 		ApplicationContext ac1 = new ClassPathXmlApplicationContext("beans.xml");
-		Employee emp=ac1.getBean("emp1",Employee.class);
+		Employee emp = ac1.getBean("emp1", Employee.class);
 		emp.print();
+	}
+
+	public static void testLifeCycle() {
+		ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext("Lc.xml");
+		LifeCycleBean life = ac.getBean(LifeCycleBean.class);
+		life.print();
+		life = null;
+//		System.gc();
+		ac.close();
+		ac = null;
+		System.gc();
+	}
+
+	public static void testInitDestroyBean() {
+		ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext("Lc.xml");
+		InitDisposeBean init = ac.getBean(InitDisposeBean.class);
+		init.print();
+	}
+
+	public static void testAnnotationLc() {
+		ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext("Lc.xml");
+		AnnotationLc annlc = ac.getBean(AnnotationLc.class);
+		annlc.print();
+		annlc = null;
+		ac.close();
+	}
+
+	public static void testAutowire() {
+		ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext("Autowire.xml");
+		Car car = ac.getBean(Car.class);
+		car.start();
+		car.move();
+		car = null;
+		ac.close();
+	}
+	public static void testAutowireQualifier() {
+		ConfigurableApplicationContext ac = new ClassPathXmlApplicationContext("Autowire.xml");
+		CarServices cs = ac.getBean(CarServices.class);
+		cs.startTrip();
 	}
 }

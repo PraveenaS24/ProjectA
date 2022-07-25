@@ -1,11 +1,16 @@
-// this.title=title; // this.title is global variable, and title is a local variable
-    	   title=filmtitle;// This is similar to this.title=filmtitle, but using this. prefix is not compulsory
-    	   director=filmdirector;// This is similar to this.director=filmdirector but using this. prefix is not compulsory
-    	   // as there are no local variables by name title, or director 
-    	   //      so, here they will implicitly referred to global variable
-    	   //  note: if title and director are not globally declare then it will be undeclared variable cannot be resolved to a variable
-    	   // if the parameter names are similar to the global variables 
-    	   // then there is an ambiguity between the local variable (parameters) and global varaible
-    	   // hence this. prefix is used for referring the global variable 
-    	   // title=title will be referring the local variable on both side of the = operator (x=x)self assigning
-    	   
+      this.title=title; // this.title is global variable, and title is a local variable
+ title=filmtitle;// This is similar to this.title=filmtitle, but using this. prefix is not compulsory
+   director=filmdirector;// This is similar to this.director=filmdirector but using this. prefix is not compulsory
+    as there are no local variables by name title, or director 
+   so, here they will implicitly referred to global variable
+   note: if title and director are not globally declare then it will be undeclared variable cannot be resolved to a variable
+    if the parameter names are similar to the global variables 
+    then there is an ambiguity between the local variable (parameters) and global varaible
+     hence this. prefix is used for referring the global variable 
+    will be referring the local variable on both side of the = operator (x=x)self assigning
+    	  this method is executed immediately after the constructor
+    	   this method is used to setUp the object before it is ready for service calls
+   1.init-method is post object creation
+   
+   Spring does not manage the complete lifecycle of a prototype bean: the container instantiates, configures, decorates and otherwise assembles a prototype object, hands it to the client and then has no further knowledge of that prototype instance. For releasing resources try to implement a custom bean post processor.
+   
